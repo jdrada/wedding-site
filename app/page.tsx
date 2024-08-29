@@ -1,28 +1,23 @@
 "use client";
 
-import classNames from "classnames";
-
-import { script, unna } from "./fonts";
-import CandJC from "@/public/cyjc1.png";
-import Image from "next/image";
 import HomeIntroLogo from "@/components/HomeIntroLogo";
 import Reception from "@/components/Reception";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
     <>
       <main
-        className={classNames([
-          unna.className,
-          "flex flex-col w-full shadow relative",
+        className={cn([
+          "flex flex-col w-full shadow max-w-screen-mobile mx-auto",
         ])}
       >
-        <section id="home" className="h-screen flex w-full bg-dark">
+        <section id="home" className="h-screen flex w-full bg-black">
           <HomeIntroLogo />
         </section>
-        {/* <section className="flex w-full h-screen bg-light">
+        <section className="flex w-full">
           <Reception />
-        </section> */}
+        </section>
       </main>
     </>
   );

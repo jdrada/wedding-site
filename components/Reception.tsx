@@ -1,44 +1,41 @@
-import { script } from "@/app/fonts";
-import classNames from "classnames";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import Engage from "@/public/engage.png";
+import Engage from "@/public/ring.png";
+import { cn } from "@/lib/utils";
+import RsvpDrawer from "./RsvpDrawer";
+import RegistryDrawer from "./RegistryDrawer";
+import LocationDrawer from "./LocationDrawer";
+import { script } from "@/app/fonts";
+import ItinerarioDrawer from "./ItinerarioDrawer";
+
+import NuestraHistoria from "./NuestraHistoria";
+import QueHacerDrawer from "./QueHacer";
+import FotosDrawer from "./Fotos";
 
 const Reception = () => {
   return (
     <div className="w-full relative">
-      <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 15 }}
-        transition={{ duration: 1 }}
-        className={classNames([
-          script.className,
-          "text-4xl text-center md:text-8xl mt-10",
-        ])}
-      >
-        Itinerario
-      </motion.h2>
-      <motion.p
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 15 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="text-center mt-4"
-      >
-        La ceremonia se llevara en Liquidambar, Santa Lucia.
-      </motion.p>
-      <div className="flex items-center">
-        <button className="p-2 border border-black rounded-lg">RSVP</button>
-        <button className="p-2 border border-black rounded-lg">Waze</button>
+      <h2 className={cn(["text-5xl text-center my-8", script.className])}>
+        El Gran Día <br></br>
+      </h2>
+
+      <p className="text-sm text-muted-foreground text-center mb-6 px-4">
+        Explora los detalles esenciales de nuestro día especial.
+      </p>
+
+      <div className="grid grid-cols-2 gap-4 px-4">
+        <RsvpDrawer />
+        <ItinerarioDrawer />
+        <RegistryDrawer />
+        <LocationDrawer />
+        <NuestraHistoria />
+        <QueHacerDrawer />
+
+        <FotosDrawer />
       </div>
-      <motion.div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 1.5 }}
-        className="absolute bottom-0 object-cover w-full h-auto"
-      >
-        <Image src={Engage} alt="engagement" className="opacity-75"></Image>
-      </motion.div>
+      <div className="bottom-0 object-cover w-full h-auto">
+        <Image src={Engage} alt="engagement"></Image>
+      </div>
     </div>
   );
 };

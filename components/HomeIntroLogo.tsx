@@ -1,11 +1,12 @@
 "use client";
-import { script } from "@/app/fonts";
+import { script, unna } from "@/app/fonts";
 import classNames from "classnames";
 import React from "react";
 import Image from "next/image";
-import CandJC from "@/public/cyjc1.png";
+import CandJC from "@/public/hero.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import DownArrow from "./icons/DownArrow";
+import { cn } from "@/lib/utils";
 
 const HomeIntroLogo = () => {
   const backgroundRef = React.useRef<HTMLDivElement>(null);
@@ -23,15 +24,15 @@ const HomeIntroLogo = () => {
     >
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        className="justify-center mt-20 max-w-screen-xl w-full"
+        className="justify-center mt-28 max-w-screen-xl w-full"
       >
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          className={classNames([
+          className={cn([
             script.className,
-            "text-white text-6xl text-center md:text-8xl",
+            "text-white text-6xl text-center md:text-6xl",
           ])}
         >
           Carolina + <br />
@@ -41,31 +42,40 @@ const HomeIntroLogo = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.75 }}
-          className="text-white text-center mt-4 relative z-10"
+          className={cn([
+            "text-white text-center my-8 relative z-10 text-lg",
+            unna.className,
+          ])}
         >
           BODA CIVIL | 26.10.2024
         </motion.p>
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.75 }}
           className="text-white text-center mt-4 relative z-10"
         >
-          Pronto...
-        </motion.p>
+          <div className=" w-full flex items-center justify-center z-30">
+            <div className="backdrop-blur-sm text-white border border-white animate-bounce p-1 rounded-full">
+              <DownArrow />
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
-
-      <Image
-        priority
-        src={CandJC}
-        alt="caro&juan"
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
         className="object-cover bottom-0 absolute w-full h-auto z-20"
-      ></Image>
-      <div className="absolute bottom-4 w-full flex items-center justify-center z-30">
-        <div className="backdrop-blur-sm text-white border border-white animate-bounce p-1 rounded-full">
-          <DownArrow />
-        </div>
-      </div>
+      >
+        <Image
+          priority
+          src={CandJC}
+          alt="caro&juan"
+          className="object-cover bottom-0 absolute w-full h-auto z-20"
+          // className="object-cover bottom-0 absolute w-full h-auto z-20"
+        ></Image>
+      </motion.div>
     </motion.div>
   );
 };
