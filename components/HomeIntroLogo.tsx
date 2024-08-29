@@ -27,9 +27,9 @@ const HomeIntroLogo = () => {
         className="justify-center mt-28 max-w-screen-xl w-full"
       >
         <motion.h1
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
+          // initial={{ opacity: 0, y: 15 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.75 }}
           className={cn([
             script.className,
             "text-white text-6xl text-center md:text-6xl",
@@ -41,7 +41,7 @@ const HomeIntroLogo = () => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.75 }}
+          transition={{ duration: 1, delay: 0.5 }}
           className={cn([
             "text-white text-center my-8 relative z-10 text-lg",
             unna.className,
@@ -62,20 +62,15 @@ const HomeIntroLogo = () => {
           </div>
         </motion.div>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.75 }}
+      =
+      <Image
+        priority
+        src={CandJC}
+        alt="caro&juan"
         className="object-cover bottom-0 absolute w-full h-auto z-20"
-      >
-        <Image
-          priority
-          src={CandJC}
-          alt="caro&juan"
-          className="object-cover bottom-0 absolute w-full h-auto z-20"
-          // className="object-cover bottom-0 absolute w-full h-auto z-20"
-        ></Image>
-      </motion.div>
+
+        // className="object-cover bottom-0 absolute w-full h-auto z-20"
+      ></Image>
     </motion.div>
   );
 };
