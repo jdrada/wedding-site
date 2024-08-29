@@ -9,8 +9,8 @@ import classNames from "classnames";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "C & JC",
-  description: "Wedding website for Carolina and Juan",
+  title: "Boda Carolina y Juan",
+  description: "¡Nos casamos 💍! Carolina y Juan Carlos",
 };
 
 const fontSans = FontSans({
