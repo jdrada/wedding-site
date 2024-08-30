@@ -9,7 +9,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Input } from "@/components/ui/input";
 
 type RsvpDataType = {
   name: "string";
@@ -20,6 +31,8 @@ type RsvpDataType = {
 
 const Page = () => {
   const [rsvpData, setRsvpData] = useState<RsvpDataType[]>([]);
+  const [password, setPassword] = useState("");
+  const [authorized, setAuthorized] = useState(false);
   console.log("rsvpData", rsvpData);
 
   const fetchRsvp = async () => {
@@ -49,6 +62,38 @@ const Page = () => {
       day: "numeric",
     });
   };
+
+  if (!authorized) {
+    return (
+      <main className="p-8">
+        <Link
+          href={"/"}
+          className="border border-black p-4 mx-auto rounded-xl mt-20"
+        >
+          Regresar
+        </Link>
+        <Dialog defaultOpen>
+          {/* <DialogTrigger>Open</DialogTrigger> */}
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle className="mb-4">La duena de todo?</DialogTitle>
+
+              <Input
+                type="text"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  if (e.target.value === "ena") {
+                    setAuthorized(true);
+                  }
+                }}
+              ></Input>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      </main>
+    );
+  }
+
   return (
     <main className="max-w-screen-mobile mx-auto p-4">
       <Table>
