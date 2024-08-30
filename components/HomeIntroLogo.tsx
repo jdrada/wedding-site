@@ -8,7 +8,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import DownArrow from "./icons/DownArrow";
 import { cn } from "@/lib/utils";
 
-const HomeIntroLogo = () => {
+const HomeIntroLogo = ({
+  scrollToNextSection,
+}: {
+  scrollToNextSection: () => void;
+}) => {
   const backgroundRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: backgroundRef,
@@ -55,10 +59,15 @@ const HomeIntroLogo = () => {
           transition={{ duration: 1, delay: 0.75 }}
           className="text-white text-center mt-4 relative z-10"
         >
-          <div className=" w-full flex items-center justify-center z-30">
-            <div className="backdrop-blur-sm text-white border border-white animate-bounce p-1 rounded-full">
+          <div className="mt-4 w-full flex items-center justify-center z-30">
+            <button
+              onClick={scrollToNextSection}
+              title="scroll down"
+              type="button"
+              className="backdrop-blur-sm text-white border border-white animate-bounce p-1 rounded-full"
+            >
               <DownArrow />
-            </div>
+            </button>
           </div>
         </motion.div>
       </motion.div>
