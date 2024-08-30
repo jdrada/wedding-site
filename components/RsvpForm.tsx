@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z
@@ -29,6 +30,8 @@ const formSchema = z.object({
     message: "Por favor, ingresa cuantos confirman",
   }),
   song: z.string().optional(),
+  driver: z.boolean().optional(),
+  guard: z.boolean().optional(),
 });
 
 export function RsvpForm({ confirmRsvp }: { confirmRsvp: () => void }) {
