@@ -40,6 +40,7 @@ const Page = () => {
       const response = await fetch("/api/get-rsvp");
       if (!response.ok) throw new Error("Failed to fetch RSVP data");
       const data = await response.json();
+      console.log("data", data);
       setRsvpData(data.data);
     } catch (error) {
       console.error("error", error);
