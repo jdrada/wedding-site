@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   try {
     const { rows } =
-      await sql`SELECT Name, HowMany, Song, Driver, CreatedAt FROM Rsvp;`;
+      await sql`SELECT Name, HowMany, Song, CreatedAt FROM Rsvp;`;
+
+    const { rows: all } =
+      await sql`SELECT Name, HowMany, Song, CreatedAt FROM rsvp;`;
+    console.log("all", all);
 
     if (!rows || rows.length === 0) throw new Error("No data found");
 
