@@ -102,12 +102,13 @@ export function RsvpForm({ confirmRsvp }: { confirmRsvp: () => void }) {
               <FormControl>
                 <Input
                   type="number"
+                  max={5}
                   placeholder="Numero de personas que confirman"
                   {...field}
                 />
               </FormControl>
               {/* <FormDescription>
-                This is your public display name.
+                Máximo 5 personas por grupo
               </FormDescription> */}
               <FormMessage />
             </FormItem>

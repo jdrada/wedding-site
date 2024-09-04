@@ -29,6 +29,8 @@ type RsvpDataType = {
   createdat: "string";
 };
 
+export const dynamic = "force-dynamic";
+
 const Page = () => {
   const [rsvpData, setRsvpData] = useState<RsvpDataType[]>([]);
   const [password, setPassword] = useState("");
