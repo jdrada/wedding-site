@@ -11,6 +11,7 @@ import ItinerarioDrawer from "./ItinerarioDrawer";
 import NuestraHistoria from "./NuestraHistoria";
 import QueHacerDrawer from "./QueHacer";
 import FotosDrawer from "./Fotos";
+import AttireDrawer from "./AttireDrawer";
 
 const Reception = () => {
   return (
@@ -30,6 +31,7 @@ const Reception = () => {
         <LocationDrawer />
         <NuestraHistoria />
         <QueHacerDrawer />
+        <AttireDrawer />
 
         <FotosDrawer />
       </div>

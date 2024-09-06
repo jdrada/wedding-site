@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Drawer,
   DrawerClose,
@@ -14,39 +14,38 @@ import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { script } from "@/app/fonts";
-import Timeline from "@/public/timeline.svg";
-import CalendarIcon from "./icons/CalendarIcon";
-import Image from "next/image";
+import BuildingIcon from "./icons/BuildingIcon";
+import AttireIcon from "./icons/AttireIcon";
 
-const FotosDrawer = () => {
-  const [hasConfirmed, setHasConfirmed] = useState(false);
-
+const AttireDrawer = () => {
   return (
     <Drawer>
       <DrawerTrigger className="flex h-20 border items-center justify-center gap-2 rounded-lg">
-        {/* <DrawerTrigger className="col-span-2 flex h-20 border items-center justify-center gap-2 rounded-lg"> */}
-        <CalendarIcon />
-        Fotos
+        <AttireIcon />
+        Atuendo
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle
-            className={cn([
-              script.className,
-              "text-6xl my-4 mx-auto text-center",
-            ])}
+            className={cn([script.className, "text-6xl mx-auto text-center"])}
           >
-            Fotos
+            Atuendo
           </DrawerTitle>
 
-          <DrawerDescription className="my-4 mx-auto text-center">
-            Muy pronto...
+          <DrawerDescription className="mt-4 mx-auto text-center">
+            Inspirate con las ideas que tenemos para ti.
           </DrawerDescription>
         </DrawerHeader>
 
+        <iframe
+          title="attire"
+          className="h-[60dvh] w-full"
+          src="https://petracoding.github.io/pinterest/board.html?link=mendozac3093/attire-ortiz-mendoza-wedding/&hideHeader=1&transparent=1"
+        ></iframe>
+
         <DrawerFooter>
           <DrawerClose>
-            <Button type="button" variant="outline" className="mt-8">
+            <Button type="button" variant="outline" className="mt-2">
               Volver
             </Button>
           </DrawerClose>
@@ -56,4 +55,4 @@ const FotosDrawer = () => {
   );
 };
 
-export default FotosDrawer;
+export default AttireDrawer;
