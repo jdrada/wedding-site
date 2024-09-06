@@ -17,6 +17,7 @@ import { script } from "@/app/fonts";
 import Timeline from "@/public/timeline.svg";
 import CalendarIcon from "./icons/CalendarIcon";
 import Image from "next/image";
+import { PhotoCarousel } from "./PhotosCarousel";
 
 const FotosDrawer = () => {
   const [hasConfirmed, setHasConfirmed] = useState(false);
@@ -39,9 +40,11 @@ const FotosDrawer = () => {
             Fotos
           </DrawerTitle>
 
-          <DrawerDescription className="my-4 mx-auto text-center">
+          {/* <DrawerDescription className="my-4 mx-auto text-center">
             Muy pronto...
-          </DrawerDescription>
+            </DrawerDescription> */}
+
+          <PhotoCarousel />
         </DrawerHeader>
 
         <DrawerFooter>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   DrawerClose,
@@ -39,8 +39,10 @@ const AttireDrawer = () => {
 
         <iframe
           title="attire"
-          className="h-[60dvh] w-full"
-          src="https://petracoding.github.io/pinterest/board.html?link=mendozac3093/attire-ortiz-mendoza-wedding/&hideHeader=1&transparent=1"
+          className={cn(["h-[60dvh] w-full"])}
+          src={
+            "https://petracoding.github.io/pinterest/board.html?link=mendozac3093/attire-ortiz-mendoza-wedding/&hideHeader=1&transparent=1"
+          }
         ></iframe>
 
         <DrawerFooter>
